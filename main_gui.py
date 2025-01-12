@@ -27,9 +27,7 @@ def calculate_payouts():
             creditors = [(i, balance) for i, balance in enumerate(balances) if balance > 0]
 
             if sum(final_euros) != num_players * bet_amount:
-                print(
-                    f"insgesamt gibts {sum(final_euros)}, aber es sollten {num_players * bet_amount} vorhanden sein, sie negah")
-                raise "kanak"
+                raise ValueError(f"insgesamt gibts {sum(final_euros)}, aber es sollten {num_players * bet_amount} vorhanden sein, sie negah")
 
             settlements = []
             while debtors and creditors:
